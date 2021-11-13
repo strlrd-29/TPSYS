@@ -1,4 +1,4 @@
-## Done by Ghribi Ouassim Abdelmalek <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
+## Done by Ghribi Ouassim Abdelmalek <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>![Linux Image](https://camo.githubusercontent.com/566080f1f10a299450280c8b9430bf6c24ce39b71098ccee2ffed461c1b151d3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c696e75782d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d6c696e7578)
 
 1.  **Reconnaître votre shell**
     
