@@ -1,5 +1,8 @@
 ## Done by Ghribi Ouassim Abdelmalek <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>![Linux Image](https://camo.githubusercontent.com/566080f1f10a299450280c8b9430bf6c24ce39b71098ccee2ffed461c1b151d3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c696e75782d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d6c696e7578)
 
+# **PartI**
+
+
 1.  **Reconnaître votre shell**
     
     ```bash
@@ -354,4 +357,77 @@
     ```
     Reponse : 
     > Le repertoire `mon_repertoire` est efface defenitivement
+
+# **PartII : Gestion des processus**
+
+1. **Obtenir l’UID et le GID**
+
+    ```bash
+   id
+
+
+    ```
+
+    Reponse :
+    > uid=1000(strlrd-29) gid=1000(strlrd-29) groups=1000(strlrd-29),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),120(lpadmin),132(lxd),133(sambashare)
+
+    *Observation*: 
+    > La commande `id` sous Linux est utilisée pour trouver les noms d'utilisateur et de groupe et les ID numériques (UID ou ID de groupe) de l'utilisateur actuel ou de tout autre utilisateur du serveur.
+
+2. **Visualiser les processus**
+
+    . `ps`
+    
+
+    Reponse :
+    
+    **La commande `ps` permet de Connaître les processus actifs ainsi que ces ressources à un moment donné**
+    
+    > PID      |   TTY  |  TIME     |  CMD   |
+    >----------|--------|-----------|--------|
+    > 3514     |  pts/0 |  00:00:00 |  bash  | 
+    > 3683     |  pts/0 |  00:00:00 |  ps    |
+        
+    
+    . `ps -u nom_utilisateur`
+    
+    
+    Reponse :
+    
+    **L'option "-u nom_utilisateur" affiche chaque processus associés à utilisateur**
+    
+    
+    > | USER  |  PID |  %CPU |  %MEM |  VSZ |  RSS | TTY |  STAT |  START |  TIME | COMMAND   |
+    > |---|---|---|---|---|---|---|---|---|---|---|
+    > | strlrd-+  |    1606   |  0.0  |  0.1  | 172656    |  6504 | tty2  |     Ssl+  | 09:29 |   0:00    | /usr/lib/gdm3 |
+    > | strlrd-+   | 1609 | 0.3 | 1.3 |287196 |66312| tty2   |  Sl+ | 09:29  | 0:04 |/usr/lib/xorg |
+    > |strlrd-+   | 1646 | 0.0 | 0.3 |199424 | 15324 | tty2 |    Sl+ | 09:29 |  0:00 | /usr/libexec/ |
+    > |strlrd-+    |3514  |0.0  |0.1  |19656  |5340 |pts/0    |Ss   |09:30   |0:00 |bash|
+    > | strlrd-+    |3748  |0.0  |0.0  |20136  |3312| pts/0    |R+   |09:55   |0:00 | ps -u|
+    
+
+# PartIII : **La compilation sous UNIX**
+
+1. **Creation de Processus fork()**
+
+Reponse :
+> Valeur retournée par la fonction fork: 5703                                                                                                          
+> Je suis le processus numéro 5702                                                                                                                      
+> Valeur retournée par la fonction fork: 0                                                                                                             
+> Je suis le processus numéro 5703
+    
+*Observation:* 
+
+> L'appel système fork est utilisé pour créer un nouveau processus, appelé processus enfant, qui s'exécute en même temps que le processus qui effectue l'appel fork()
+> (processus parent).
+> 
+>  Après la création d'un nouveau processus enfant, les deux processus exécuteront l'instruction suivante après l'appel système fork().
+> 
+>  Un processus enfant utilise le même PC (compteur de programme), les mêmes registres CPU, les mêmes fichiers ouverts que ceux utilisés dans le processus parent.
+>
+> Dans notre cas a chaque fois qu'on execute le programme on remarque qu'on a deux output dont le premier est du processus parent et le deuxieme du processus enfant qui a ete généré par la fonction `fork()`  et on remarque qu'apres plusieurs execution que le `PID` du processus enfant change a chaque appel du programme mais le `PID` du processus parent ne change pas.
+
+*On ajoute `sleep(4)`* et on remarque qu'on a le même output mais après avoir attendu 4 secondes a cause de la fonction `sleep(4)`
+
+
 
