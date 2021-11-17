@@ -474,3 +474,9 @@ Reponse :
     Reponse:
      
     > La fonction execl() remplace l'image de processus actuelle par une nouvelle image de processus spécifiée par path. La nouvelle image est construite à partir d'un fichier exécutable régulier appelé le nouveau fichier image de processus. Aucun retour n'est effectué car l'image de processus appelante est remplacée par la nouvelle image de processus.
+
+4. **Synchronisation avec sémaphores**
+
+    Reponse :
+    
+    **Je n'ai pas pu ececuter le programme**
