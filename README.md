@@ -429,5 +429,36 @@ Reponse :
 
 *On ajoute `sleep(4)`* et on remarque qu'on a le même output mais après avoir attendu 4 secondes a cause de la fonction `sleep(4)`
 
+2. **Synchronisation de processus père et fils (mécanisme wait/exit)**
 
+    **Output**
+    
+    ```
+    Je suis le processus père num=3701 
+    ********
+    * PERE *
+    ********
+    Proc père num= 3701 -
+     Fils num= 3702 
+    J’attends la fin de mon fils: 
+                    ********
+                    * FILS * 
+                    ********
+                    Proc fils num= 3702 - 
+                    Père num= 3701 
+                    Je vais dormir 30 secondes ...
+                    Je me reveille , 
+                    Je termine mon execution par un EXIT(7)
+    Mon fils de num=3702 est termine,
+    Son état était :700
+    ```
 
+    Reponse :
+    
+    > Comme on fait un switch sur la variable `valeur` et dans l'output du programe on a au début l'exécution de `default case` c'est a dire que `valeur != -1 && valeur != 0` donc on est dans le processus parent avec un `pid = 3701` qui s'execute jusqu'a arriver a la fonction `wait(&etat)` qui permet a le processus pere d'attendre jusqu'a la fin de l'exécution du processus fils pour continuer son exécution ce qu'on voit dans les deux dernieres lignes.
+    > 
+    > Le processus fils termine son exécution avec un `exit(7)` ce qui permet au processus pere de savoir l'etat de son fils. 
+
+3. **Fonctionnement de exec**
+
+    Reponse 
