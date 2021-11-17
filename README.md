@@ -460,5 +460,17 @@ Reponse :
     > Le processus fils termine son exécution avec un `exit(7)` ce qui permet au processus pere de savoir l'etat de son fils. 
 
 3. **Fonctionnement de exec**
-
-    Reponse 
+    
+    Output:
+    ```
+    Je suis le processus 4243 je vais faire fork
+     Père numéro 4243 attend
+     Coucou ! je suis le fils 4244
+     4244 : Code remplace par /usr/bin/ps
+     Utilisation : /usr/bin/ps fic. à exécuter ! 
+      Le fils était : 4244  ... son état était :100 (hexa)
+    ```
+    
+    Reponse:
+     
+    > La fonction execl() remplace l'image de processus actuelle par une nouvelle image de processus spécifiée par path. La nouvelle image est construite à partir d'un fichier exécutable régulier appelé le nouveau fichier image de processus. Aucun retour n'est effectué car l'image de processus appelante est remplacée par la nouvelle image de processus.
